@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './button/button.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
+    HeroDetailComponent
   ],
   imports: [
     NgbModule.forRoot(),
