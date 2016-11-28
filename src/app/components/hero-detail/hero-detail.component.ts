@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Hero} from "../../model/hero";
 
 @Component({
   selector: 'hero-detail',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent {
-
-  constructor() { }
-
+  @Input()
+  hero : Hero;
 
 }
