@@ -7,27 +7,26 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroComponent } from './components/hero/hero.component';
-import {RouterModule} from "@angular/router";
+import { DahsboardComponent } from './components/dahsboard/dahsboard.component';
+import {HeroService} from "./services/hero.service";
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
-    HeroComponent
+    HeroComponent,
+    DahsboardComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroComponent
-      }
-    ])
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 
