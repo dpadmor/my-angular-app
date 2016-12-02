@@ -12,11 +12,13 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit{
+  pepe : Params;
 
   ngOnInit(): void {
     console.info("HeroDetail por parametro");
+
     this.route.params
-      .switchMap((param: Params) => this.heroService.getHero(+param['id']))
+      .switchMap((param : Params) => this.heroService.getHero(+param['id']))
       .subscribe(hero => this.hero = hero);
   }
 
@@ -31,6 +33,11 @@ export class HeroDetailComponent implements OnInit{
 
   goBack (): void {
     this.location.back();
+  }
+
+  save (): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
   }
 
 

@@ -16,9 +16,8 @@ export class DahsboardComponent implements OnInit {
 
   ngOnInit():void {
     console.info("DashBoard " + this.heroService.getHeroes());
-    this.heroes = this.heroService.getHeroes2().slice(1,5);
     this.heroService.getHeroes()
-      .then(heroes => console.info("Slice " + heroes.slice(1,5)));
+      .then(heroes => this.heroes = heroes.slice(1,5));
     console.info(this.heroes);
   }
 
